@@ -19,16 +19,21 @@ require 'conexion.php';
             <?php require_once 'menu.php';?>
             <div class="jumbotron">
                 <h1 class="display-4">Agenda de contactos</h1>
-                <p class="lead">Buscar un contacto por su nombre</p>
+                <p class="lead">Buscar un contacto por nombre o por telefono</p>
                 <hr class="my-4">
             </div>
         </div>
         <br>
         <form action="" method="get">
             <div class="mb-3">
-                <label class="form-label">Nombre del contacto:</label>
+                <label class="form-label">Nombre/telefono del contacto:</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="busqueda" placeholder="Buscar" >
             </div>
+            <select class="form-select" aria-label="Default select example" name="select">
+                    <option value="1">Nombre</option>
+                    <option value="2">Telefono</option>
+            </select>
+            <br>
             <button type="submit" name="enviar" class="btn btn-primary">Buscar</button>
         </form>
         <br><br>
@@ -36,7 +41,13 @@ require 'conexion.php';
         <?php 
             if(isset($_GET['enviar'])){
                 $busqueda = $_GET['busqueda'];
-                $consulta = "SELECT * FROM contactoagenda WHERE nombre LIKE '%$busqueda%'";
+                if($_GET['select'] == 1){
+                    $consulta = "SELECT * FROM contactoagenda WHERE nombre LIKE '%$busqueda%'";
+                } elseif($_GET['select']== 2){
+                   $consulta = "SELECT * FROM contactoagenda WHERE telefono LIKE '%$busqueda%'"; 
+                }else{
+                    echo 'no hay datos';
+                }
             }
         ?>
         <br>

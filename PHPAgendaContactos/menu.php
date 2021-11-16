@@ -7,7 +7,7 @@
           <a class="nav-link" href="index.php">Inicio</a>
         </li>
         <li class="nav-link active">
-          <a class="nav-link" href="busqueda.php?busqueda=&enviar=">Busqueda</a>
+          <a class="nav-link" href="busqueda.php?busqueda=&select=1&enviar=">Busqueda</a>
         </li>
         <li class="nav-link active">
           <a class="nav-link" href="crea.php">Crear</a>
