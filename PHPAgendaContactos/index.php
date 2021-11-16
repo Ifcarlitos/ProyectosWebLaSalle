@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Agenda de contactos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      </head>
     <body>
         <div class="container">
@@ -15,14 +16,14 @@
             </div>
         </div>
         <br>
-        <table border="1">
+        <table class="table">
             <tr>
-                <td>id</td>
-                <td>nombre</td>
-                <td>apellidos</td>
-                <td>telefono</td>
-                <td>email</td>
-                <td>comentario</td>
+                <td scope="col">id</td>
+                <td scope="col">nombre</td>
+                <td scope="col">apellidos</td>
+                <td scope="col">telefono</td>
+                <td scope="col">email</td>
+                <td scope="col">comentario</td>
             </tr>
             <?php 
                $sql='SELECT * FROM contactoagenda';
