@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include 'conexion.php'?>
+<?php 
+    include 'conexion.php';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -16,31 +18,8 @@
             </div>
         </div>
         <br>
-        <table class="table">
-            <tr>
-                <td scope="col">id</td>
-                <td scope="col">nombre</td>
-                <td scope="col">apellidos</td>
-                <td scope="col">telefono</td>
-                <td scope="col">email</td>
-                <td scope="col">comentario</td>
-            </tr>
             <?php 
-               $sql='SELECT * FROM contactoagenda';
-               $datos = mysqli_query($conexion, $sql);
-               while($mostrar = mysqli_fetch_array($datos)){
+            buscar(true,'',0);
             ?>
-            <tr>
-                <td><?php echo $mostrar['id'] ?></td>
-                <td><?php echo $mostrar['nombre'] ?></td>
-                <td><?php echo $mostrar['apellidos'] ?></td>
-                <td><?php echo $mostrar['telefono'] ?></td>
-                <td><?php echo $mostrar['email'] ?></td>
-                <td><?php echo $mostrar['comentario'] ?></td>
-            </tr>
-            <?php 
-               }
-            ?>
-        </table>
     </body>
 </html>

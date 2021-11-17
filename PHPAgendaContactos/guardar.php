@@ -1,5 +1,6 @@
-<?php
- require 'conexion.php';
+<?php 
+ include 'conexion.php';
+
  $id = $_POST['id'];
  $nombre  = $_POST['nombre'];
  $apellido  = $_POST['apellidos'];
@@ -7,10 +8,6 @@
  $email = $_POST['email'];
  $comentario = $_POST['comentario'];
 
-$insertar = "INSERT INTO contactoagenda VALUES ('$id','$nombre','$apellido','$telefono','$email','$comentario')";
-$sqlinsert = "INSERT INTO contactoagenda (nombre, apellidos, telefono, email, comentario) VALUES ('$nombre', '$apellido', '$telefono', '$email', '$comentario');";
-
-$queryinsert = mysqli_query($conexion, $sqlinsert);
 ?>
 
 <!DOCTYPE html>
@@ -24,10 +21,9 @@ $queryinsert = mysqli_query($conexion, $sqlinsert);
         <div class="container">
             <?php require_once 'menu.php';?>
         </div>
-        <h1>Usuario creado</h1>
+        <h1>Usuario creado:</h1>
         <?php
-            echo 'nombre: '.$nombre;
-            echo ' y apellido: '.$apellido;
+        nuevousuario($id, $nombre, $apellido, $telefono, $email, $comentario);
         ?>
     </body>
 </html>

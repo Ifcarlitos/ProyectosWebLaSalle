@@ -1,5 +1,5 @@
-<?php
-require 'conexion.php';
+<?php 
+    include 'conexion.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@ require 'conexion.php';
         <form action="" method="get">
             <div class="mb-3">
                 <label class="form-label">ID del contacto a editar:</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="busqueda" placeholder="Buscar" >
+                <input type="text" class="form-control" id="exampleInputEmail1" name="busqueda" placeholder="Buscar, es obligatorio" >
             </div>
             <div class="mb-3">
                 <label class="form-label">Nombre:</label>
@@ -60,26 +60,7 @@ require 'conexion.php';
                     $email = $_GET['email'];
                     $comentario = $_GET['coment'];
                     
-                    if($nombre<>''){
-                        $consulta = "UPDATE contactoagenda SET nombre='$nombre' WHERE id='$busqueda'";
-                        mysqli_query($conexion, $consulta);
-                    }      
-                    if($apellido<>''){
-                        $consulta = "UPDATE contactoagenda SET apellidos='$apellido' WHERE id='$busqueda'";
-                        mysqli_query($conexion, $consulta);
-                    }
-                    if($telefono<>''){
-                        $consulta = "UPDATE contactoagenda SET telefono='$telefono' WHERE id='$busqueda'";
-                        mysqli_query($conexion, $consulta);
-                    }
-                    if($email<>''){
-                        $consulta = "UPDATE contactoagenda SET email='$email' WHERE id='$busqueda'";
-                        mysqli_query($conexion, $consulta);
-                    }
-                    if($comentario<>''){
-                        $consulta = "UPDATE contactoagenda SET comentario='$comentario' WHERE id='$busqueda'";
-                        mysqli_query($conexion, $consulta);
-                    }
+                    editarUsuario($busqueda, $nombre, $apellido, $telefono, $email, $comentario);
                 }
             } else{echo 'indica usuario a editar';}
         ?>

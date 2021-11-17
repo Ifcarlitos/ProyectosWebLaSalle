@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include 'conexion.php'?>
+<?php 
+    include 'conexion.php';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -23,7 +25,7 @@
             <div id="wrapper" class="container">
                  <center>   
                     <h1>Insertar un nuevo contacto</h1><hr>
-                        <form  method="POST" name="form-work" action="logica/guardar.php">
+                        <form  method="POST" name="form-work" action="">
                             <fieldset>
                                   <div class="form-group">
                                     <div class="col-md-6">
@@ -72,7 +74,6 @@
                                       </div>
                                     </div> 
                                 </fieldset> 
-        
                         </form>
                  </center>
               </div>
